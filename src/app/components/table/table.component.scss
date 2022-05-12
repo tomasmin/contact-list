@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+  max-width: 875px;
+  font-family: "Open Sans", sans-serif;
+  white-space: nowrap;
+}
+
+.mat-header-cell {
+  color: white;
+  background-color: #4eb7be;
+  font-size: 14px;
+  border-bottom: none;
+}
+
+.mat-column-phone {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.mat-cell {
+  background-color: #cfd9d9;
+  padding-right: 24px;
+}
+
+::ng-deep .mat-sort-header-arrow {
+  color: white;
+}
+
+th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type {
+  padding-right: 72px;
+}
