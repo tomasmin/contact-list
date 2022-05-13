@@ -1,4 +1,11 @@
-import { Component, AfterViewInit, ViewChild, OnInit } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ViewChild,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ContactsService } from 'src/app/services/contacts.service';
@@ -15,6 +22,9 @@ export class TableComponent implements OnInit, AfterViewInit {
   faEye = faEye;
   faEyeSlash = faEyeSlash;
 
+  selectedContactId: string;
+  @Output() selectedContactChanged: EventEmitter<string> = new EventEmitter();
+
   constructor(private contactService: ContactsService) {}
 
   @ViewChild(MatSort) sort: MatSort;
@@ -30,6 +40,13 @@ export class TableComponent implements OnInit, AfterViewInit {
   getContacts(): void {
     this.contactService.getContacts().subscribe((contacts) => {
       this.dataSource.data = contacts;
+      this.selectedContactId = contacts[0].id;
+      this.selectedContactChanged.emit(this.selectedContactId);
     });
+  }
+
+  selectContact(id: string) {
+    this.selectedContactId = id;
+    this.selectedContactChanged.emit(this.selectedContactId);
   }
 }

@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="header"></div>
+  <div *ngIf="name" class="content">
+    <img class="user-pic" src="/assets/img/userpic.jpg" alt="userpic" />
+    <div class="contact-info">
+      <div class="keys">
+        <p>Name:</p>
+        <p>City:</p>
+        <p>Email:</p>
+        <p>Phone:</p>
+      </div>
+      <div class="values">
+        <p>{{ name }}</p>
+        <p>{{ city }}</p>
+        <p>
+          <a [href]="'mailto:' + email">{{ email }}</a>
+        </p>
+        <p>{{ phone }}</p>
+      </div>
+    </div>
+  </div>
+</div>

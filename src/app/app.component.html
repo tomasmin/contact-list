@@ -1,3 +1,7 @@
 <div class="main-container">
-  <app-table></app-table>
+  <app-table
+    (selectedContactChanged)="contactChangeHandler($event)"
+    class="grid-item-table"
+  ></app-table>
+  <app-viewing-area [id]="id" class="grid-item-viewing-area"></app-viewing-area>
 </div>

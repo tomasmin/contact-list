@@ -1,0 +1,36 @@
+.wrapper {
+    width: 312px;
+}
+
+.header {
+    height: 51px;
+    background-color: #4eb7be;
+}
+
+.content {
+    background-color: #d8e1e5;
+    text-align: center;
+    padding: 17px;
+}
+
+.user-pic {
+    border-radius: 50%;
+    border: 8px solid white;
+    width: 206px;
+}
+
+.contact-info {
+    display: inline-flex;
+    .keys {
+        text-align: right;
+        color: #4f4d43;
+        margin-right: 27px;
+    }
+    .values {
+        text-align: left;
+    }
+}
+
+a {
+    color: #1e89c3;
+}

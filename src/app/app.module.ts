@@ -8,9 +8,10 @@ import { MaterialModule } from '../material.module';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ViewingAreaComponent } from './components/viewing-area/viewing-area.component';
 
 @NgModule({
-  declarations: [AppComponent, TableComponent],
+  declarations: [AppComponent, TableComponent, ViewingAreaComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
