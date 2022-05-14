@@ -9,9 +9,14 @@ export class AppComponent {
   title = 'contact-list';
 
   id: string;
+  cityList: string[] = [];
 
   contactChangeHandler(id: string) {
     this.id = id;
-    console.log(id);
+  }
+
+  cityListChangeHandler(list: string[]) {
+    this.cityList = list;
+    console.log(list);
   }
 }

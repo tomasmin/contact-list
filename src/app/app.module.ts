@@ -9,6 +9,7 @@ import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ViewingAreaComponent } from './components/viewing-area/viewing-area.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, TableComponent, ViewingAreaComponent],
@@ -18,6 +19,7 @@ import { ViewingAreaComponent } from './components/viewing-area/viewing-area.com
     MaterialModule,
     HttpClientModule,
     FontAwesomeModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
