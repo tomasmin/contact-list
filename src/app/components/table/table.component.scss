@@ -15,10 +15,27 @@ table {
   background-color: #4eb7be;
   font-size: 14px;
   border-bottom: none !important;
+  padding-right: 24px !important;
 }
 
 .mat-column-phone {
   text-align: right !important;
+}
+
+.mat-column-columnSelect {
+  padding-right: 0 !important;
+}
+
+.column-select {
+  height: 51px;
+  width: 30px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fa-icon {
+    cursor: pointer;
+  }
 }
 
 .mat-cell {
@@ -91,4 +108,27 @@ td.mat-cell:last-of-type {
 
 .mat-button-ripple.mat-ripple {
   opacity: 0.3 !important;
+}
+
+.menu-item {
+  .mat-checkbox-label {
+    color: black !important;
+  }
+  .mat-checkbox-frame {
+    border-color: #4eb7be !important;
+  }
+}
+
+.mat-menu-panel {
+  border-radius: 0 !important;
+  width: 150px !important;
+}
+
+.mat-menu-content {
+  padding: 0 !important;
+}
+
+.mat-menu-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+  cursor: default !important;
 }

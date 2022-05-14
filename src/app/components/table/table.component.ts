@@ -10,7 +10,7 @@ import {
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ContactsService } from 'src/app/services/contacts.service';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash, faList } from '@fortawesome/free-solid-svg-icons';
 import { Contact } from 'src/app/models/contact';
 
 @Component({
@@ -20,11 +20,23 @@ import { Contact } from 'src/app/models/contact';
   encapsulation: ViewEncapsulation.None,
 })
 export class TableComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['name', 'city', 'isActive', 'email', 'phone'];
+  displayedColumns: string[] = [
+    'name',
+    'city',
+    'isActive',
+    'email',
+    'phone',
+    'columnSelect',
+  ];
+  showNameColumn: boolean = true;
+  showCityColumn: boolean = true;
+  showEmailColumn: boolean = true;
+  showPhoneColumn: boolean = true;
   contacts: Contact[] = [];
   dataSource = new MatTableDataSource();
   faEye = faEye;
   faEyeSlash = faEyeSlash;
+  faList = faList;
 
   selectedContactId: string;
   @Output() selectedContactChanged: EventEmitter<string> = new EventEmitter();
@@ -97,5 +109,13 @@ export class TableComponent implements OnInit, AfterViewInit {
       return contact.isActive == false || contact.isActive == this.activeFilter;
     });
     this.dataSource.data = filteredContacts;
+  }
+
+  updateDisplayColumns(column: string) {
+    if (this.displayedColumns.includes(column)) {
+      this.displayedColumns = this.displayedColumns.filter((c) => c !== column);
+    } else {
+      this.displayedColumns.unshift(column);
+    }
   }
 }

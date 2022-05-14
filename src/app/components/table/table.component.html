@@ -85,6 +85,50 @@
     </td>
   </ng-container>
 
+  <ng-container matColumnDef="columnSelect">
+    <th mat-header-cell *matHeaderCellDef>
+      <div [matMenuTriggerFor]="menu" class="column-select">
+        <fa-icon [icon]="faList"></fa-icon>
+      </div>
+      <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+        <div mat-menu-item class="menu-item">
+          <mat-checkbox
+            [(ngModel)]="showNameColumn"
+            (change)="updateDisplayColumns('name')"
+            >Name</mat-checkbox
+          >
+        </div>
+        <div mat-menu-item class="menu-item">
+          <mat-checkbox
+            [(ngModel)]="showCityColumn"
+            (change)="updateDisplayColumns('city')"
+            >City</mat-checkbox
+          >
+        </div>
+        <div mat-menu-item class="menu-item">
+          <mat-checkbox
+            [(ngModel)]="showEmailColumn"
+            (change)="updateDisplayColumns('email')"
+            >Email</mat-checkbox
+          >
+        </div>
+        <div mat-menu-item class="menu-item">
+          <mat-checkbox
+            [(ngModel)]="showPhoneColumn"
+            (change)="updateDisplayColumns('phone')"
+            >Phone</mat-checkbox
+          >
+        </div>
+      </mat-menu>
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+      [ngClass]="{ 'selected-row': element.id === selectedContactId }"
+      (click)="selectContact(element.id)"
+    ></td>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
