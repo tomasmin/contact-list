@@ -87,21 +87,15 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   applyFilter() {
     let filteredContacts = this.contacts;
-    if (this.nameFilter && this.cityFilter) {
-      filteredContacts = this.contacts.filter((contact) => {
-        return (
-          contact.name.toLowerCase().includes(this.nameFilter.toLowerCase()) &&
-          contact.city == this.cityFilter
-        );
-      });
-    } else if (this.nameFilter) {
-      filteredContacts = this.contacts.filter((contact) => {
+    if (this.nameFilter) {
+      filteredContacts = filteredContacts.filter((contact) => {
         return contact.name
           .toLowerCase()
           .includes(this.nameFilter.toLowerCase());
       });
-    } else if (this.cityFilter) {
-      filteredContacts = this.contacts.filter((contact) => {
+    }
+    if (this.cityFilter) {
+      filteredContacts = filteredContacts.filter((contact) => {
         return contact.city == this.cityFilter;
       });
     }
